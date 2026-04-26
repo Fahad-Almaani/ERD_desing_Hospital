@@ -1,14 +1,14 @@
 ### Doctor
-- ID,age,name, specialization
+- DID,age,name, specialization
 ### Patient
-- ID, name, phoneNumber,age
+- PID, name, phoneNumber,age
 ### Department
-- ID, name
+- DepID, name
 ### Appointment
-- ID, datetime,status, type
+- AID, datetime,status, type
 ### Service
-- ID , name, type, price
+- SID , name, type, price
 ### Medical Record
-- ID, Diagnosis, Treatment  
+- MID, Diagnosis, Treatment  
 ### Billing
-- ID, paymentInfo, total 
+- BID, paymentInfo, total 
