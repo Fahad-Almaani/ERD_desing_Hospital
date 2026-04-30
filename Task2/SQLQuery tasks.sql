@@ -138,17 +138,14 @@ GROUP BY Payment_status
 HAVING SUM(Total_amount) > 50;
 
 
--- Highest revenue service (Quantity × Price)
-SELECT 
-    s.Service_id,
-    SUM(asv.Quantity * s.Unit_price) AS Revenue
-FROM Appointment_Service asv
-JOIN Service s ON asv.Service_id = s.Service_id
-GROUP BY s.Service_id
-ORDER BY Revenue DESC;
+SELECT TOP 1 
+    Service_id,
+    SUM(Quantity) AS Total_Used
+FROM Appointment_Service
+GROUP BY Service_id
+ORDER BY Total_Used DESC;
 
-
--- Highest revenue service (Quantity × Price)
+-- Highest revenue service (Quantity × Price) 
 SELECT 
     s.Service_id,
     SUM(asv.Quantity * s.Unit_price) AS Revenue
